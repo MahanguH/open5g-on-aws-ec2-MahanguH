@@ -153,6 +153,7 @@ sudo hostnamectl set-hostname k3s-master-3
 ### 2.3 — Update packages and set timezone
 
 ```sh
+# Command ran on all 3 nodes successfully 
 sudo apt-get update && sudo apt-get upgrade -y
 sudo timedatectl set-timezone UTC
 ```
