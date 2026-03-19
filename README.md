@@ -175,7 +175,7 @@ EOF
 > sudo swapoff -a
 > sudo sed -i '/ swap / s/^/#/' /etc/fstab
 > ```
-
+# Ran commands on all 3 nodes
 ---
 
 ## Step 3: Install K3s on the First Master Node
