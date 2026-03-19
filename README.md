@@ -123,7 +123,7 @@ Record the values — you will need them throughout this guide:
 |----------|------------|-----------|
 | k3s-master-1 | 172.31.43.174 | 3.87.113.135 |
 | k3s-master-2 | 172.31.85.12 | 3.89.31.91 |
-| k3s-master-3 | 10.0.x.x | 1.2.3.6 |
+| k3s-master-3 | 172.31.80.22 | 44.212.65.229 |
 
 ---
 
