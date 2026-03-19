@@ -140,13 +140,13 @@ ssh -i ~/.ssh/$KEY_NAME.pem ubuntu@<public-ip>
 ### 2.2 — Set the hostname (run separately on each node)
 
 ```sh
-# On k3s-master-1
+# On k3s-master-1 //Changed
 sudo hostnamectl set-hostname k3s-master-1
 
-# On k3s-master-2
+# On k3s-master-2 //Changed
 sudo hostnamectl set-hostname k3s-master-2
 
-# On k3s-master-3
+# On k3s-master-3 //Changed
 sudo hostnamectl set-hostname k3s-master-3
 ```
 
