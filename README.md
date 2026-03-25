@@ -164,9 +164,9 @@ Add an entry for each node so they can resolve each other by hostname. Replace t
 
 ```sh
 sudo tee -a /etc/hosts <<EOF
-10.0.1.10  k3s-master-1
-10.0.1.11  k3s-master-2
-10.0.1.12  k3s-master-3
+172.31.43.174  k3s-master-1
+1172.31.85.12  k3s-master-2
+172.31.80.22  k3s-master-3
 EOF
 ```
 
@@ -218,6 +218,7 @@ curl -sfL https://get.k3s.io | sh -
 sudo kubectl get nodes
 sudo kubectl get pods -A
 ```
+<img width="1919" height="976" alt="Screenshot 2026-03-25 233226" src="https://github.com/user-attachments/assets/184f7c0e-ab21-4168-b456-2c28ce95cd91" />
 
 ### 3.4 — Retrieve the cluster join token
 
@@ -226,6 +227,9 @@ sudo cat /var/lib/rancher/k3s/server/token
 ```
 
 Save this token — you will need it in the next step.
+
+<img width="1919" height="970" alt="Screenshot 2026-03-20 162358" src="https://github.com/user-attachments/assets/0b1b2afd-a49f-47b4-98c3-05e77c6ab3f4" />
+
 
 ---
 
@@ -240,13 +244,13 @@ sudo mkdir -p /etc/rancher/k3s
 
 # Example for k3s-master-2. Replace IPs and token with your values.
 sudo tee /etc/rancher/k3s/config.yaml <<EOF
-server: https://10.0.1.10:6443
+server: https://1172.31.43.174:6443
 token: <token-from-master-1>
-node-ip: 10.0.1.11
-advertise-address: 10.0.1.11
+node-ip: 1172.31.85.12
+advertise-address: 172.31.85.12
 tls-san:
-  - 10.0.1.11
-  - 1.2.3.5
+  - 172.31.85.12
+  - 3.91.57.234
   - k3s-master-2
 disable: [servicelb, traefik]
 EOF
@@ -272,6 +276,8 @@ k3s-master-1   Ready    control-plane,etcd,master   5m    v1.30.x+k3s1
 k3s-master-2   Ready    control-plane,etcd,master   2m    v1.30.x+k3s1
 k3s-master-3   Ready    control-plane,etcd,master   1m    v1.30.x+k3s1
 ```
+<img width="1919" height="971" alt="Screenshot 2026-03-24 215915" src="https://github.com/user-attachments/assets/5db3d7a8-543b-4926-9f6e-9864d4aa7d3f" />
+
 
 ---
 
@@ -305,6 +311,8 @@ curl http://<master-public-ip>:30080
 ```
 
 Expected output: `welcome to my web app!`
+
+<img width="1919" height="976" alt="Screenshot 2026-03-24 224129" src="https://github.com/user-attachments/assets/c338088b-197f-4ca4-922d-2aee793c5aa3" />
 
 ---
 
